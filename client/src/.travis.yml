@@ -10,14 +10,14 @@ script:
   - docker run -e CI=true gp/react-test npm test
 after_success:
   - docker build -t gp/multi-client ./client
-  - docker build -t gp/multi-nginx ./nginx
-  - docker build -t gp/multi-server ./server
-  - docker build -t gp/multi-worker ./worker
-  # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  # Take those images and push them to docker hub
-  - docker push gp/multi-client
-  - docker push gp/multi-nginx
-  - docker push gp/multi-server
-  - docker push gp/multi-worker
+  # - docker build -t gp/multi-nginx ./nginx
+  # - docker build -t gp/multi-server ./server
+  # - docker build -t gp/multi-worker ./worker
+  # # Log in to the docker CLI
+  # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # # Take those images and push them to docker hub
+  # - docker push gp/multi-client
+  # - docker push gp/multi-nginx
+  # - docker push gp/multi-server
+  # - docker push gp/multi-worker
 
